@@ -20,6 +20,12 @@ SimpleCov.start
 Delayed::Worker.logger = Logger.new('/tmp/dj.log')
 ENV['RAILS_ENV'] = 'test'
 
+class Rails
+  def self.root
+    '.'
+  end
+end
+
 Delayed::Worker.backend = :test
 
 # Add this directory so the ActiveSupport autoloading works
